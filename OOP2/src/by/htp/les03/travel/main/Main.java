@@ -75,14 +75,14 @@ public class Main {
 			boolean transportation = voucher.get(i).getTransportation();
 
 			System.out.print(name + " ONLY for " + price + " BYR, for " + duration + " days, starting from " + day + " "
-					+ monthName[month - 1] + "! OPTIONS: ");
+					+ monthName[month - 1] + "! OPTIONS:");
 
 			if (breakfast) {
-				System.out.print("breakfast, ");
+				System.out.print(" breakfast;");
 			}
 
 			if (transportation) {
-				System.out.print("airport transportation.");
+				System.out.print(" airport transportation;");
 			}
 			System.out.println();
 		}
