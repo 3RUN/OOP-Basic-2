@@ -10,18 +10,18 @@ public class Main {
 
 	public static void main(String[] args) {
 
-		List<Account> accountList = new ArrayList<Account>();
+		Account[] accountInit = new Account[5];
+		accountInit[0] = new Account(1, 10.0, false);
+		accountInit[1] = new Account(4, 50.0, false);
+		accountInit[2] = new Account(2, 0.0, false);
+		accountInit[3] = new Account(5, -40.0, false);
+		accountInit[4] = new Account(3, 5.0, true); // blocked
 
-		Account accountA = new Account(1, 10.0, false);
-		accountList.add(accountA);
-		Account accountB = new Account(4, 50.0, false);
-		accountList.add(accountB);
-		Account accountC = new Account(2, 0.0, false);
-		accountList.add(accountC);
-		Account accountD = new Account(5, -40.0, false);
-		accountList.add(accountD);
-		Account accountE = new Account(3, 5.0, true); // blocked
-		accountList.add(accountE);
+		int i = 0;
+		List<Account> accountList = new ArrayList<Account>();
+		for (i = 0; i < accountInit.length; i++) {
+			accountList.add(accountInit[i]);
+		}
 
 		Customer customer = new Customer("Kochkarov Magomet Robertovich", accountList);
 
