@@ -1,6 +1,7 @@
 package by.htp.les03.account.main;
 
-import java.util.*;
+import java.util.ArrayList;
+import java.util.List;
 
 import by.htp.les03.account.entity.Account;
 import by.htp.les03.account.entity.Customer;
@@ -23,45 +24,47 @@ public class Main {
 			accountList.add(accountInit[i]);
 		}
 
-		Customer customer = new Customer("Kochkarov Magomet Robertovich", accountList);
+		Customer customer = new Customer("Magomet", "Kochkarov", accountList);
 
-		System.out.println("Customer " + customer.getFullName() + " has total of " + customer.getAccount().size()
-				+ " accounts.\n");
+		System.out.println("Customer " + customer.getName() + " " + customer.getSurname() + " has total of "
+				+ customer.getAccount().size() + " accounts.\n");
 
 		// sort them by balance
-		BankLogic.sortByBalance(customer);
+		BankLogic logic = new BankLogic();
+
+		logic.sortByBalance(customer);
 
 		// show them
 		displayAccount(customer.getAccount());
 
 		// show total cash
-		System.out.println("Total cash " + BankLogic.getBalance(customer) + " rub.");
+		System.out.println("Total cash " + logic.getBalance(customer) + " rub.");
 		// available money
-		System.out.println("Available " + BankLogic.getBalanceAvailable(customer) + " rub.");
+		System.out.println("Available " + logic.getBalanceAvailable(customer) + " rub.");
 		// show debt
-		System.out.println("Debt " + BankLogic.getDebt(customer) + " rub.");
+		System.out.println("Debt " + logic.getDebt(customer) + " rub.");
 		// show total balance
-		System.out.println("Balance (debt repaid) " + BankLogic.getBalanceDeptRepaid(customer) + " rub.\n");
+		System.out.println("Balance (debt repaid) " + logic.getBalanceDeptRepaid(customer) + " rub.\n");
 
 		// show accounts with balance more than 10 rub
 		System.out.println("All accounts with balance more than 10 rub.");
-		displayAccount(BankLogic.findByBalance(customer, 10.0));
+		displayAccount(logic.findByBalance(customer, 10.0));
 
 		// show blocked accounts
 		System.out.println("All blocked accounts:");
-		displayAccount(BankLogic.findBlocked(customer));
+		displayAccount(logic.findBlocked(customer));
 
 		// show not blocked accounts
 		System.out.println("All not blocked accounts:");
-		displayAccount(BankLogic.findNotBlocked(customer));
+		displayAccount(logic.findNotBlocked(customer));
 
 		// show accounts with negative balance
 		System.out.println("All accounts with negative balance:");
-		displayAccount(BankLogic.findNegative(customer));
+		displayAccount(logic.findNegative(customer));
 
 		// show accounts with positive balance
 		System.out.println("All accounts with positive balance:");
-		displayAccount(BankLogic.findPositive(customer));
+		displayAccount(logic.findPositive(customer));
 
 	}
 
