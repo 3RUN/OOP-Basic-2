@@ -36,12 +36,15 @@ public class Main {
 		// show list of all available offers
 		displayAccount(agency.getVouchers());
 
+		// create logic
+		TouristAgencyLogic logic = new TouristAgencyLogic();
+
 		// find offers with the given parameters (within the given month)
-		List<Voucher> resA = TouristAgencyLogic.find(agency, 20000, 21, 6, true, true, VoucherType.CRUISE);
+		List<Voucher> resA = logic.find(agency, 20000, 21, 6, true, true, VoucherType.CRUISE);
 		displayAccount(resA);
 
 		// find offer with the given parameters (WITHOUT month)
-		List<Voucher> resB = TouristAgencyLogic.find(agency, 10000, 7, true, true, VoucherType.SHOPING);
+		List<Voucher> resB = logic.find(agency, 10000, 7, true, true, VoucherType.SHOPING);
 		displayAccount(resB);
 
 	}
@@ -71,8 +74,8 @@ public class Main {
 			int duration = voucher.get(i).getDuration();
 			int day = voucher.get(i).getDay();
 			int month = voucher.get(i).getMonth();
-			boolean breakfast = voucher.get(i).getBreakfast();
-			boolean transportation = voucher.get(i).getTransportation();
+			boolean breakfast = voucher.get(i).isBreakfast();
+			boolean transportation = voucher.get(i).isTransportation();
 
 			System.out.print(name + " ONLY for " + price + " BYR, for " + duration + " days, starting from " + day + " "
 					+ monthName[month - 1] + "! OPTIONS:");
