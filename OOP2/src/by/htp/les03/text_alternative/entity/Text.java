@@ -1,6 +1,6 @@
 package by.htp.les03.text_alternative.entity;
 
-import java.util.*;
+import java.util.List;
 
 public class Text {
 
