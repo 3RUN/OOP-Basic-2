@@ -8,11 +8,11 @@ public class EngineLogic {
 	}
 
 	// run engine
-	public static void start(Engine engine) {
+	public void start(Engine engine) {
 	}
 
 	// stop engine
-	public static void stop(Engine stop) {
+	public void stop(Engine stop) {
 	}
 
 }
