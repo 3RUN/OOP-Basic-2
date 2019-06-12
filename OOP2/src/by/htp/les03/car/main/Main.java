@@ -9,9 +9,10 @@ public class Main {
 
 		int fuel = 20;
 		Car car = new Car();
-		CarLogic.drive(car);
-		CarLogic.refuel(car, fuel);
-		CarLogic.changeWheel(car);
+		CarLogic carLogic = car.getCarLogic();
+		carLogic.drive(car);
+		carLogic.refuel(car, fuel);
+		carLogic.changeWheel(car);
 		System.out.println(car.getModel());
 
 	}
