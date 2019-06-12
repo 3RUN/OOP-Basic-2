@@ -1,31 +1,42 @@
 package by.htp.les03.account.entity;
 
-import java.util.*;
+import java.util.ArrayList;
+import java.util.List;
 
 public class Customer {
 
-	private String fullName;
+	private String name;
+	private String surname;
 	private List<Account> account;
 
 	public Customer() {
 		this.account = new ArrayList<Account>();
 	}
 
-	public Customer(String fullName, List<Account> account) {
-		this.fullName = fullName;
+	public Customer(String name, String surname, List<Account> account) {
+		this.name = name;
+		this.surname = surname;
 		this.account = account;
 	}
 
-	public void setFullName(String fullName) {
-		this.fullName = fullName;
+	public void setName(String name) {
+		this.name = name;
+	}
+
+	public void setSurname(String surname) {
+		this.surname = surname;
 	}
 
 	public void setAccount(List<Account> account) {
 		this.account = account;
 	}
 
-	public String getFullName() {
-		return this.fullName;
+	public String getName() {
+		return this.name;
+	}
+
+	public String getSurname() {
+		return this.surname;
 	}
 
 	public List<Account> getAccount() {
@@ -37,7 +48,8 @@ public class Customer {
 		final int prime = 31;
 		int result = 1;
 		result = prime * result + ((account == null) ? 0 : account.hashCode());
-		result = prime * result + ((fullName == null) ? 0 : fullName.hashCode());
+		result = prime * result + ((name == null) ? 0 : name.hashCode());
+		result = prime * result + ((surname == null) ? 0 : surname.hashCode());
 		return result;
 	}
 
@@ -55,17 +67,22 @@ public class Customer {
 				return false;
 		} else if (!account.equals(other.account))
 			return false;
-		if (fullName == null) {
-			if (other.fullName != null)
+		if (name == null) {
+			if (other.name != null)
 				return false;
-		} else if (!fullName.equals(other.fullName))
+		} else if (!name.equals(other.name))
+			return false;
+		if (surname == null) {
+			if (other.surname != null)
+				return false;
+		} else if (!surname.equals(other.surname))
 			return false;
 		return true;
 	}
 
 	@Override
 	public String toString() {
-		return "Customer [fullName=" + fullName + ", account=" + account + "]";
+		return "Customer [name=" + name + ", surname=" + surname + ", account=" + account + "]";
 	}
 
 }
