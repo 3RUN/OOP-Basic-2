@@ -1,6 +1,7 @@
 package by.htp.les03.text_alternative.main;
 
-import java.util.*;
+import java.util.ArrayList;
+import java.util.List;
 
 import by.htp.les03.text_alternative.entity.Sentence;
 import by.htp.les03.text_alternative.entity.Text;
