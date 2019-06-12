@@ -1,7 +1,8 @@
 package by.htp.les03.state.main;
 
 import java.text.DecimalFormat;
-import java.util.*;
+import java.util.ArrayList;
+import java.util.List;
 
 import by.htp.les03.state.entity.Area;
 import by.htp.les03.state.entity.City;
