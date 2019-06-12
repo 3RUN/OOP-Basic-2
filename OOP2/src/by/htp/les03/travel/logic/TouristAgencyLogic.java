@@ -31,9 +31,9 @@ public class TouristAgencyLogic {
 			if (tempPrice <= price && tempDuration <= duration) {
 
 				// check voucher if it has breakfast included
-				boolean breakfast = agencyList.get(i).getBreakfast();
+				boolean breakfast = agencyList.get(i).isBreakfast();
 				// check voucher if it has transportation from airport
-				boolean transportation = agencyList.get(i).getTransportation();
+				boolean transportation = agencyList.get(i).isTransportation();
 
 				// breakfast and transportation equals to the given parameters?
 				// then move on to the type
@@ -82,9 +82,9 @@ public class TouristAgencyLogic {
 			if (tempPrice <= price && tempDuration <= duration) {
 
 				// check voucher if it has breakfast included
-				boolean breakfast = agencyList.get(i).getBreakfast();
+				boolean breakfast = agencyList.get(i).isBreakfast();
 				// check voucher if it has transportation from airport
-				boolean transportation = agencyList.get(i).getTransportation();
+				boolean transportation = agencyList.get(i).isTransportation();
 
 				// breakfast and transportation equals to the given parameters?
 				// then move on to the type
@@ -195,7 +195,7 @@ public class TouristAgencyLogic {
 		for (i = 0; i < agencyList.size(); i++) {
 
 			// check voucher if it has breakfast included
-			boolean breakfast = agencyList.get(i).getBreakfast();
+			boolean breakfast = agencyList.get(i).isBreakfast();
 			if (breakfast == hasBreakfast) {
 				// if it has
 				// then add it to temporary list
@@ -214,7 +214,7 @@ public class TouristAgencyLogic {
 		for (i = 0; i < agencyList.size(); i++) {
 
 			// check voucher if it has transportation from airport
-			boolean transportation = agencyList.get(i).getTransportation();
+			boolean transportation = agencyList.get(i).isTransportation();
 			if (transportation == hasTransportation) {
 				// if it has
 				// then add it to temporary list
