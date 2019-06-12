@@ -1,6 +1,7 @@
 package by.htp.les03.travel.logic;
 
-import java.util.*;
+import java.util.ArrayList;
+import java.util.List;
 
 import by.htp.les03.travel.entity.TouristAgency;
 import by.htp.les03.travel.entity.Voucher;
@@ -11,7 +12,7 @@ public class TouristAgencyLogic {
 	public TouristAgencyLogic() {
 	}
 
-	public static List<Voucher> find(TouristAgency touristAgency, double price, int duration, boolean hasBreakfast,
+	public List<Voucher> find(TouristAgency touristAgency, double price, int duration, boolean hasBreakfast,
 			boolean hasTransportation, VoucherType type) {
 		int i = 0;
 		List<Voucher> tempList = new ArrayList<Voucher>();
@@ -56,8 +57,8 @@ public class TouristAgencyLogic {
 		return tempList;
 	}
 
-	public static List<Voucher> find(TouristAgency touristAgency, double price, int duration, int month,
-			boolean hasBreakfast, boolean hasTransportation, VoucherType type) {
+	public List<Voucher> find(TouristAgency touristAgency, double price, int duration, int month, boolean hasBreakfast,
+			boolean hasTransportation, VoucherType type) {
 		int i = 0;
 		List<Voucher> tempList = new ArrayList<Voucher>();
 		List<Voucher> agencyList = touristAgency.getVouchers();
@@ -107,7 +108,7 @@ public class TouristAgencyLogic {
 		return tempList;
 	}
 
-	public static List<Voucher> findByType(TouristAgency touristAgency, VoucherType type) {
+	public List<Voucher> findByType(TouristAgency touristAgency, VoucherType type) {
 		int i = 0;
 		List<Voucher> tempList = new ArrayList<Voucher>();
 		List<Voucher> agencyList = touristAgency.getVouchers();
@@ -127,7 +128,7 @@ public class TouristAgencyLogic {
 		return tempList;
 	}
 
-	public static List<Voucher> findByPrice(TouristAgency touristAgency, double price) {
+	public List<Voucher> findByPrice(TouristAgency touristAgency, double price) {
 		int i = 0;
 		List<Voucher> tempList = new ArrayList<Voucher>();
 		List<Voucher> agencyList = touristAgency.getVouchers();
@@ -147,7 +148,7 @@ public class TouristAgencyLogic {
 		return tempList;
 	}
 
-	public static List<Voucher> findByHigherDuration(TouristAgency touristAgency, int duration) {
+	public List<Voucher> findByHigherDuration(TouristAgency touristAgency, int duration) {
 		int i = 0;
 		List<Voucher> tempList = new ArrayList<Voucher>();
 		List<Voucher> agencyList = touristAgency.getVouchers();
@@ -167,7 +168,7 @@ public class TouristAgencyLogic {
 		return tempList;
 	}
 
-	public static List<Voucher> findByLowerDuration(TouristAgency touristAgency, int duration) {
+	public List<Voucher> findByLowerDuration(TouristAgency touristAgency, int duration) {
 		int i = 0;
 		List<Voucher> tempList = new ArrayList<Voucher>();
 		List<Voucher> agencyList = touristAgency.getVouchers();
@@ -187,7 +188,7 @@ public class TouristAgencyLogic {
 		return tempList;
 	}
 
-	public static List<Voucher> findByBreakfast(TouristAgency touristAgency, boolean hasBreakfast) {
+	public List<Voucher> findByBreakfast(TouristAgency touristAgency, boolean hasBreakfast) {
 		int i = 0;
 		List<Voucher> tempList = new ArrayList<Voucher>();
 		List<Voucher> agencyList = touristAgency.getVouchers();
@@ -206,7 +207,7 @@ public class TouristAgencyLogic {
 		return tempList;
 	}
 
-	public static List<Voucher> findByTransportation(TouristAgency touristAgency, boolean hasTransportation) {
+	public List<Voucher> findByTransportation(TouristAgency touristAgency, boolean hasTransportation) {
 		int i = 0;
 		List<Voucher> tempList = new ArrayList<Voucher>();
 		List<Voucher> agencyList = touristAgency.getVouchers();
@@ -225,7 +226,7 @@ public class TouristAgencyLogic {
 		return tempList;
 	}
 
-	public static void sortByType(TouristAgency touristAgency) {
+	public void sortByType(TouristAgency touristAgency) {
 		int i = 0;
 		int j = 0;
 		Voucher tempVoucher;
@@ -249,7 +250,7 @@ public class TouristAgencyLogic {
 		}
 	}
 
-	public static void sortByDuration(TouristAgency touristAgency) {
+	public void sortByDuration(TouristAgency touristAgency) {
 		int i = 0;
 		int j = 0;
 		Voucher tempVoucher;
@@ -273,7 +274,7 @@ public class TouristAgencyLogic {
 		}
 	}
 
-	public static void sortByPrice(TouristAgency touristAgency) {
+	public void sortByPrice(TouristAgency touristAgency) {
 		int i = 0;
 		int j = 0;
 		Voucher tempVoucher;
@@ -298,7 +299,7 @@ public class TouristAgencyLogic {
 		}
 	}
 
-	public static void sortByDate(TouristAgency touristAgency) {
+	public void sortByDate(TouristAgency touristAgency) {
 		int i = 0;
 		int j = 0;
 		Voucher tempVoucher;
@@ -332,6 +333,7 @@ public class TouristAgencyLogic {
 			}
 
 		}
+
 	}
 
 }
