@@ -2,16 +2,25 @@ package by.htp.les03.car.entity;
 
 import java.util.Arrays;
 
+import by.htp.les03.car.logic.CarLogic;
+import by.htp.les03.car.logic.EngineLogic;
+
 public class Car {
 
+	private CarLogic carLogic;
+	private EngineLogic engineLogic;
 	private String model;
 	private Wheel[] wheel;
 	private Engine engine;
 	private int fuel;
 	private int gasTank;
 
-	public Car() {
+	{
+		this.carLogic = new CarLogic();
+		this.engineLogic = new EngineLogic();
+	}
 
+	public Car() {
 		this.model = "BMW";
 		this.wheel = new Wheel[4];
 		int i = 0;
@@ -44,6 +53,14 @@ public class Car {
 			fuel = gasTank;
 		}
 		this.fuel += fuel;
+	}
+
+	public CarLogic getCarLogic() {
+		return this.carLogic;
+	}
+
+	public EngineLogic getEngineLogic() {
+		return this.engineLogic;
 	}
 
 	public String getModel() {
