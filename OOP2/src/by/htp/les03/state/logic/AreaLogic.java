@@ -5,11 +5,11 @@ import by.htp.les03.state.entity.City;
 
 public class AreaLogic {
 
-	public static void addCity(Area area, City city) {
+	public void addCity(Area area, City city) {
 		area.getCities().add(city);
 	}
 
-	public static void removeCity(Area area, City city) {
+	public void removeCity(Area area, City city) {
 		int i = 0;
 		for (i = 0; i < area.getCities().size(); i++) {
 
@@ -24,7 +24,7 @@ public class AreaLogic {
 
 	}
 
-	public static void updateSquare(Area area) {
+	public void updateSquare(Area area) {
 		int i = 0;
 		double square = 0;
 		for (i = 0; i < area.getCities().size(); i++) {
@@ -34,7 +34,7 @@ public class AreaLogic {
 		area.setSquare(square);
 	}
 
-	public static void updatePopulation(Area area) {
+	public void updatePopulation(Area area) {
 		int i = 0;
 		int population = 0;
 		for (i = 0; i < area.getCities().size(); i++) {
@@ -44,7 +44,7 @@ public class AreaLogic {
 		area.setPopulation(population);
 	}
 
-	public static void update(Area area) {
+	public void update(Area area) {
 		updateSquare(area);
 		updatePopulation(area);
 	}
