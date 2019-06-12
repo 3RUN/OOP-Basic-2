@@ -10,7 +10,7 @@ public class StateLogic {
 		state.getRegions().add(region);
 	}
 
-	public static void removeRegion(State state, Region region) {
+	public void removeRegion(State state, Region region) {
 		int i = 0;
 		for (i = 0; i < state.getRegions().size(); i++) {
 
@@ -24,9 +24,12 @@ public class StateLogic {
 		}
 	}
 
-	public static void update(State state, Region region, Area area) {
-		AreaLogic.update(area);
-		RegionLogic.update(region);
+	public void update(State state, Region region, Area area) {
+		AreaLogic areaLogic = new AreaLogic();
+		areaLogic.update(area);
+
+		RegionLogic regionLogic = new RegionLogic();
+		regionLogic.update(region);
 
 		int i = 0;
 		int population = 0;
