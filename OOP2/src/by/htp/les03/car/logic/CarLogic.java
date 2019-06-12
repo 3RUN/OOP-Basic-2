@@ -9,26 +9,28 @@ public class CarLogic {
 	public CarLogic() {
 	}
 
-	public static void startEngine(Car car) {
+	public void startEngine(Car car) {
 		Engine engine = car.getEngine();
-		EngineLogic.start(engine);
+		EngineLogic logic = car.getEngineLogic();
+		logic.start(engine);
 	}
 
-	public static void stopEngine(Car car) {
+	public void stopEngine(Car car) {
 		Engine engine = car.getEngine();
-		EngineLogic.stop(engine);
+		EngineLogic logic = car.getEngineLogic();
+		logic.stop(engine);
 	}
 
-	public static void drive(Car car) {
+	public void drive(Car car) {
 		startEngine(car);
 		// add accelerate, steer, break etc
 	}
 
-	public static void refuel(Car car, int fuel) {
+	public void refuel(Car car, int fuel) {
 		car.addFuel(fuel);
 	}
 
-	public static void changeWheel(Car car) {
+	public void changeWheel(Car car) {
 
 		Wheel[] wheel = car.getWheels();
 		int i = 0;
