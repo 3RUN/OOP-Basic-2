@@ -1,6 +1,7 @@
 package by.htp.les03.account.logic;
 
-import java.util.*;
+import java.util.ArrayList;
+import java.util.List;
 
 import by.htp.les03.account.entity.Account;
 import by.htp.les03.account.entity.Customer;
@@ -10,7 +11,7 @@ public class BankLogic {
 	public BankLogic() {
 	}
 
-	public static List<Account> findById(Customer customer, int id) {
+	public List<Account> findById(Customer customer, int id) {
 		int i = 0;
 		List<Account> tempList = new ArrayList<Account>();
 		List<Account> account = customer.getAccount();
@@ -30,7 +31,7 @@ public class BankLogic {
 		return tempList;
 	}
 
-	public static List<Account> findByBalance(Customer customer, double balance) {
+	public List<Account> findByBalance(Customer customer, double balance) {
 		int i = 0;
 		List<Account> tempList = new ArrayList<Account>();
 		List<Account> account = customer.getAccount();
@@ -50,7 +51,7 @@ public class BankLogic {
 		return tempList;
 	}
 
-	public static List<Account> findBlocked(Customer customer) {
+	public List<Account> findBlocked(Customer customer) {
 		int i = 0;
 		List<Account> tempList = new ArrayList<Account>();
 		List<Account> account = customer.getAccount();
@@ -69,7 +70,7 @@ public class BankLogic {
 		return tempList;
 	}
 
-	public static List<Account> findNotBlocked(Customer customer) {
+	public List<Account> findNotBlocked(Customer customer) {
 		int i = 0;
 		List<Account> tempList = new ArrayList<Account>();
 		List<Account> account = customer.getAccount();
@@ -88,7 +89,7 @@ public class BankLogic {
 		return tempList;
 	}
 
-	public static List<Account> findNegative(Customer customer) {
+	public List<Account> findNegative(Customer customer) {
 		int i = 0;
 		List<Account> tempList = new ArrayList<Account>();
 		List<Account> account = customer.getAccount();
@@ -108,7 +109,7 @@ public class BankLogic {
 		return tempList;
 	}
 
-	public static List<Account> findPositive(Customer customer) {
+	public List<Account> findPositive(Customer customer) {
 		int i = 0;
 		List<Account> tempList = new ArrayList<Account>();
 		List<Account> account = customer.getAccount();
@@ -128,7 +129,7 @@ public class BankLogic {
 		return tempList;
 	}
 
-	public static void sortByBalance(Customer customer) {
+	public void sortByBalance(Customer customer) {
 		int i = 0;
 		int j = 0;
 		Account tempAccount;
@@ -154,7 +155,7 @@ public class BankLogic {
 
 	}
 
-	public static double getBalanceAvailable(Customer customer) {
+	public double getBalanceAvailable(Customer customer) {
 		int i = 0;
 		double sum = 0;
 		List<Account> account = customer.getAccount();
@@ -176,7 +177,7 @@ public class BankLogic {
 		return sum;
 	}
 
-	public static double getBalance(Customer customer) {
+	public double getBalance(Customer customer) {
 		int i = 0;
 		double sum = 0;
 		List<Account> account = customer.getAccount();
@@ -194,7 +195,7 @@ public class BankLogic {
 		return sum;
 	}
 
-	public static double getDebt(Customer customer) {
+	public double getDebt(Customer customer) {
 		int i = 0;
 		double sum = 0;
 		List<Account> account = customer.getAccount();
@@ -212,7 +213,7 @@ public class BankLogic {
 		return sum;
 	}
 
-	public static double getBalanceDeptRepaid(Customer customer) {
+	public double getBalanceDeptRepaid(Customer customer) {
 		int i = 0;
 		double sum = 0;
 		List<Account> account = customer.getAccount();
