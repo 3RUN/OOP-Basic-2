@@ -5,11 +5,11 @@ import by.htp.les03.state.entity.Region;
 
 public class RegionLogic {
 
-	public static void addArea(Region region, Area area) {
+	public void addArea(Region region, Area area) {
 		region.getAreas().add(area);
 	}
 
-	public static void removeArea(Region region, Area area) {
+	public void removeArea(Region region, Area area) {
 		int i = 0;
 		for (i = 0; i < region.getAreas().size(); i++) {
 
@@ -24,7 +24,7 @@ public class RegionLogic {
 
 	}
 
-	public static void updateSquare(Region region) {
+	public void updateSquare(Region region) {
 		int i = 0;
 		double square = 0;
 		for (i = 0; i < region.getAreas().size(); i++) {
@@ -34,7 +34,7 @@ public class RegionLogic {
 		region.setSquare(square);
 	}
 
-	public static void updatePopulation(Region region) {
+	public void updatePopulation(Region region) {
 		int i = 0;
 		int population = 0;
 		for (i = 0; i < region.getAreas().size(); i++) {
@@ -44,7 +44,7 @@ public class RegionLogic {
 		region.setPopulation(population);
 	}
 
-	public static void update(Region region) {
+	public void update(Region region) {
 		updateSquare(region);
 		updatePopulation(region);
 	}
