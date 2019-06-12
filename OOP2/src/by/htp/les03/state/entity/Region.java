@@ -1,6 +1,6 @@
 package by.htp.les03.state.entity;
 
-import java.util.*;
+import java.util.List;
 
 public class Region {
 
