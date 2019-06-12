@@ -78,11 +78,11 @@ public class Voucher {
 		return this.month;
 	}
 
-	public boolean getBreakfast() {
+	public boolean isBreakfast() {
 		return this.breakfast;
 	}
 
-	public boolean getTransportation() {
+	public boolean isTransportation() {
 		return this.transportation;
 	}
 
